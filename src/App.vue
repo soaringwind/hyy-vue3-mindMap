@@ -4,12 +4,7 @@
   </div>
 </template>
 
-<script setup>
-import {getHttpData} from './http/api'
-getHttpData.then(res=>{
-    console.log(res)
-})
-</script>
+<script setup></script>
 
 <style>
 * {
