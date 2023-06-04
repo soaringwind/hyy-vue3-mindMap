@@ -2,6 +2,7 @@ import exampleData from 'simple-mind-map/example/exampleData'
 import { simpleDeepClone } from 'simple-mind-map/src/utils/index'
 import Vue from 'vue'
 import bus from '@/utils/bus.js'
+import { postHttp, getHttp, getHttpData } from "../http/api"
 
 const SIMPLE_MIND_MAP_DATA = 'SIMPLE_MIND_MAP_DATA'
 const SIMPLE_MIND_MAP_LANG = 'SIMPLE_MIND_MAP_LANG'
@@ -51,6 +52,9 @@ export const storeData = data => {
     bus.emit('write_local_file', originData)
     let dataStr = JSON.stringify(originData)
     localStorage.setItem(SIMPLE_MIND_MAP_DATA, dataStr)
+    // 发送给服务器端
+    console.log(dataStr)
+    postHttp('http://127.0.0.1:5000/api/saveData', dataStr)
   } catch (error) {
     console.log(error)
   }
