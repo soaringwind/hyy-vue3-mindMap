@@ -54,7 +54,7 @@ export const storeData = data => {
     localStorage.setItem(SIMPLE_MIND_MAP_DATA, dataStr)
     // 发送给服务器端
     console.log(dataStr)
-    postHttp('http://127.0.0.1:5000/api/saveData', dataStr)
+    postHttp('http://0.0.0.0:5000/api/saveData', dataStr)
   } catch (error) {
     console.log(error)
   }
