@@ -28,7 +28,7 @@ export function getHttp(url, params = {}) {
  * @param data
  * @returns {Promise}
  */
-export function postHttp(url=address+'api/saveData', data = {}) {
+export function postHttp(url="http://119.3.238.207:5000/api/saveData", data = {}) {
     data = Qs.stringify({"data": data})
     return new Promise((resolve, reject) => {
         $http.post(url, data)
