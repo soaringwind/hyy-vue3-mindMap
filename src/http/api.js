@@ -1,8 +1,7 @@
 import $http from "./index.js";
 import Qs from 'qs'
 
-const address = "http://127.0.0.1"
-const port = 5000
+const address = "http://0.0.0.0:5000/"
 
 export const getHttpData = $http.get('http://127.0.0.1:5000/')
 /**
@@ -29,7 +28,7 @@ export function getHttp(url, params = {}) {
  * @param data
  * @returns {Promise}
  */
-export function postHttp(url='http://127.0.0.1:5000/api/saveData/', data = {}) {
+export function postHttp(url=address+'/api/saveData/', data = {}) {
     data = Qs.stringify({"data": data})
     return new Promise((resolve, reject) => {
         $http.post(url, data)
