@@ -3,7 +3,7 @@ import Qs from 'qs'
 
 const address = "http://0.0.0.0:5000/"
 
-export const getHttpData = $http.get('http://127.0.0.1:5000/')
+// export const getHttpData = $http.get('http://127.0.0.1:5000/')
 /**
  * 封装get方法
  * @param url
